@@ -318,12 +318,12 @@ export default function CourseViewerPage({ params }: { params: Promise<{ id: str
 
                     {/* Tab content */}
                     <div style={{ flex: 1, padding: '24px', overflow: 'auto' }}>
-                        {!isEditing && lesson && activeTab === 'slideshow' && <SlideViewer key={lesson.id} lesson={lesson} brand={course.brandSnapshot} />}
+                        {!isEditing && lesson && activeTab === 'slideshow' && <SlideViewer key={lesson.id} lesson={lesson} brand={course.brandSnapshot} courseId={course.id} />}
                         {!isEditing && lesson && activeTab === 'manual' && <ManualViewer key={lesson.id} lesson={lesson} brand={course.brandSnapshot} />}
                         {!isEditing && lesson && activeTab === 'cards' && <CardViewer key={lesson.id} lesson={lesson} />}
-                        {!isEditing && lesson && activeTab === 'script' && <ScriptViewer key={lesson.id} lesson={lesson} />}
+                        {!isEditing && lesson && activeTab === 'script' && <ScriptViewer key={lesson.id} lesson={lesson} courseId={course.id} />}
                         {!isEditing && lesson && activeTab === 'quiz' && <QuizViewer key={lesson.id} lesson={lesson} courseId={course.id} />}
-                        {!isEditing && lesson && activeTab === 'simulation' && <SimulationViewer key={lesson.id} lesson={lesson} brand={course.brandSnapshot} />}
+                        {!isEditing && lesson && activeTab === 'simulation' && <SimulationViewer key={lesson.id} lesson={lesson} brand={course.brandSnapshot} courseId={course.id} />}
 
                         {isEditing && editedLesson && activeTab === 'manual' && (
                             <div style={{ display: 'flex', flexDirection: 'column', height: '100%', gap: 12 }}>
