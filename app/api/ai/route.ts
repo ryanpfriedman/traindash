@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
+export const dynamic = 'force-dynamic';
+export const maxDuration = 60; // extending Vercel/Netlify lambda timeout for long AI generations
+
 export async function POST(req: NextRequest) {
     try {
         const { apiSettings, messages } = await req.json();
