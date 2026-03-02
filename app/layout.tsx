@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 import Sidebar from "@/components/layout/Sidebar";
 
 export const metadata: Metadata = {
-  title: "TrainForge — Enterprise Course Creator",
+  title: "TrainDash.io — Enterprise Course Creator",
   description: "Build, deploy, and track AI-powered training courses for your entire organization.",
   keywords: "enterprise training, course creator, AI learning, employee training, LMS",
 };

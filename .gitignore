@@ -23,6 +23,11 @@
 # misc
 .DS_Store
 *.pem
+stripe_cli/
+fix_stripe_env.js
+create_test_price.js
+test_api.js
+data/
 
 # debug
 npm-debug.log*

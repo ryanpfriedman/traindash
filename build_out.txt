@@ -1,0 +1,107 @@
+﻿
+> trainforge@0.1.0 build
+> next build
+
+node.exe : ΓÜá 
+Warning: Next.js 
+inferred your 
+workspace root, but it 
+may not be correct.
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (ΓÜá Warning:    
+ Ne...not be correc    
+t.:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+ We detected multiple 
+lockfiles and selected 
+the directory of C:\Use
+rs\Owner\package-lock.j
+son as the root 
+directory.
+ To silence this 
+warning, set 
+`turbopack.root` in 
+your Next.js config, 
+or consider removing 
+one of the lockfiles 
+if it's not needed.
+   See https://nextjs.o
+rg/docs/app/api-referen
+ce/config/next-config-j
+s/turbopack#root-direct
+ory for more 
+information.
+ Detected additional 
+lockfiles: 
+   * C:\Users\Owner\.ge
+mini\antigravity\scratc
+h\trainforge\package-lo
+ck.json
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+Found 1 warning while 
+optimizing generated 
+CSS:
+
+[2mΓöé   }[22m
+[2mΓöé }[22m
+[2mΓöé[22m @import ur
+l('https://fonts.google
+apis.com/css2?family=In
+ter:wght@300;400;500;60
+0;700;800;900&display=s
+wap');
+[2mΓöå[22m        
+[33m[2m^--[22m 
+@import rules must 
+precede all rules 
+aside from @charset 
+and @layer 
+statements[39m
+[2mΓöå[22m
+[2mΓöé :root {[22m
+[2mΓöé   --primary: 
+#6366f1;[22m
+
+Γ£ô Compiled successfully in 4.7s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/8) ...
+  Generating static pages using 7 workers (2/8) 
+  Generating static pages using 7 workers (4/8) 
+  Generating static pages using 7 workers (6/8) 
+Γ£ô Generating static pages using 7 workers (8/8) in 294.2ms
+  Finalizing page optimization ...
+
+Route (app)
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ ╞Æ /api/ai
+Γö£ Γùï /courses
+Γö£ ╞Æ /courses/[id]
+Γö£ ╞Æ /courses/[id]/learn
+Γö£ Γùï /create
+Γö£ Γùï /settings
+Γöö ╞Æ /share/[token]
+
+
+Γùï  (Static)   prerendered as static content
+╞Æ  (Dynamic)  server-rendered on demand
+

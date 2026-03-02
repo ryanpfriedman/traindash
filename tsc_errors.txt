@@ -1,0 +1,9 @@
+﻿app/courses/[id]/learn/page.tsx(6,42): error TS2724: '"lucide-react"' has no exported member named 'LayoutPresentationIcon'. Did you mean 'PresentationIcon'?
+app/courses/[id]/page.tsx(8,15): error TS2724: '"lucide-react"' has no exported member named 'LayoutPresentationIcon'. Did you mean 'PresentationIcon'?
+app/create/page.tsx(8,15): error TS2724: '"lucide-react"' has no exported member named 'LayoutPresentationIcon'. Did you mean 'PresentationIcon'?
+lib/ai.ts(223,18): error TS2345: Argument of type '(item: { str?: string; }) => string' is not assignable to parameter of type '(value: TextItem | TextMarkedContent, index: number, array: (TextItem | TextMarkedContent)[]) => string'.
+  Types of parameters 'item' and 'value' are incompatible.
+    Type 'TextItem | TextMarkedContent' is not assignable to type '{ str?: string | undefined; }'.
+      Type 'TextMarkedContent' has no properties in common with type '{ str?: string | undefined; }'.
+lib/exporters/htmlZipExport.ts(161,15): error TS7034: Variable 'tabs' implicitly has type 'any[]' in some locations where its type cannot be determined.
+lib/exporters/htmlZipExport.ts(170,51): error TS7005: Variable 'tabs' implicitly has an 'any[]' type.
