@@ -12,7 +12,7 @@ import { AppSettings } from '@/lib/types';
 import { createClient } from '@/utils/supabase/client';
 
 const navItems = [
-    { href: '/', icon: LayoutDashboard, label: 'Dashboard' },
+    { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { href: '/create', icon: PlusCircle, label: 'Create Course' },
     { href: '/courses', icon: BookOpen, label: 'My Courses' },
     { href: '/settings', icon: Settings, label: 'Settings' },
@@ -37,8 +37,8 @@ export default function Sidebar() {
 
     const isLearner = settings?.role === 'learner';
 
-    // Hide sidebar in learn mode
-    if (pathname.includes('/learn')) return null;
+    // Hide sidebar in learn mode or on the marketing landing page
+    if (pathname.includes('/learn') || pathname === '/') return null;
 
     return (
         <aside

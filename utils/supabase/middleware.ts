@@ -48,7 +48,7 @@ export async function updateSession(request: NextRequest) {
     // if user is signed in and current path is /login redirect the user to /dashboard
     if (user && isAuthRoute) {
         const url = request.nextUrl.clone()
-        url.pathname = '/courses'
+        url.pathname = '/dashboard'
         return NextResponse.redirect(url)
     }
 
