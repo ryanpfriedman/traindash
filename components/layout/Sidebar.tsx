@@ -23,9 +23,9 @@ export default function Sidebar() {
     const router = useRouter();
     const [collapsed, setCollapsed] = useState(false);
     const [settings, setSettings] = useState<any>(null);
-    const supabase = createClient();
 
     const handleSignOut = async () => {
+        const supabase = createClient();
         await supabase.auth.signOut();
         router.push('/login');
         router.refresh();

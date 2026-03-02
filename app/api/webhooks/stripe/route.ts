@@ -2,19 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-    apiVersion: '2025-02-24.acacia' as any,
-});
-
-// We need a Service Role key to bypass RLS in the webhook because there is no active user session
-const supabaseAdmin = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-    process.env.SUPABASE_SERVICE_ROLE_KEY || ''
-);
-
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+        apiVersion: '2025-02-24.acacia' as any,
+    });
+
+    // We need a Service Role key to bypass RLS in the webhook because there is no active user session
+    const supabaseAdmin = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+        process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+    );
     const body = await req.arrayBuffer();
     const payload = Buffer.from(body);
     const sig = req.headers.get('Stripe-Signature');
