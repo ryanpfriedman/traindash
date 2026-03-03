@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-        apiVersion: '2025-02-24.acacia' as any,
+        apiVersion: '2026-02-25.clover',
     });
 
     // We need a Service Role key to bypass RLS in the webhook because there is no active user session
@@ -14,8 +14,7 @@ export async function POST(req: NextRequest) {
         process.env.NEXT_PUBLIC_SUPABASE_URL || '',
         process.env.SUPABASE_SERVICE_ROLE_KEY || ''
     );
-    const body = await req.arrayBuffer();
-    const payload = Buffer.from(body);
+    const bodyText = await req.text();
     const sig = req.headers.get('Stripe-Signature');
 
     if (!sig || !process.env.STRIPE_WEBHOOK_SECRET) {
@@ -25,7 +24,7 @@ export async function POST(req: NextRequest) {
     let event: Stripe.Event;
 
     try {
-        event = stripe.webhooks.constructEvent(payload, sig, process.env.STRIPE_WEBHOOK_SECRET);
+        event = stripe.webhooks.constructEvent(bodyText, sig, process.env.STRIPE_WEBHOOK_SECRET);
     } catch (err: any) {
         console.error('Webhook signature verification failed:', err.message);
         return NextResponse.json({ error: 'Webhook Error' }, { status: 400 });

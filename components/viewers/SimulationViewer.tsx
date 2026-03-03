@@ -99,7 +99,7 @@ Your persona's conversational response here.
             const responseMatch = rawResponse.match(/\[RESPONSE\]([\s\S]*?)\[\/RESPONSE\]/i);
 
             const coachingStr = coachingMatch ? coachingMatch[1].trim() : '';
-            let responseStr = responseMatch ? responseMatch[1].trim() : rawResponse.replace(/\[COACHING\][\s\S]*?\[\/COACHING\]/i, '').trim();
+            const responseStr = responseMatch ? responseMatch[1].trim() : rawResponse.replace(/\[COACHING\][\s\S]*?\[\/COACHING\]/i, '').trim();
 
             setMessages(prev => [...prev, { role: 'assistant', content: responseStr, coaching: coachingStr }]);
 
